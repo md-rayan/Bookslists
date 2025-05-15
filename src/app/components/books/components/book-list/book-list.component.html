@@ -1,0 +1,17 @@
+<div class="container my-5">
+  <h2 class="text-center text-dark mb-5 display-6">Books on Fouling</h2>
+
+  <div *ngIf="isLoading" class="text-center text-muted">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger text-center">{{ error }}</div>
+
+  <div class="row g-4" *ngIf="!isLoading && !error">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of books">
+      <app-book-card [book]="book"></app-book-card>
+    </div>
+  </div>
+</div>

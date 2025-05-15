@@ -1,0 +1,24 @@
+<article class="card h-100 border-0 shadow rounded-4 hover-scale" tabindex="0" [attr.aria-labelledby]="'book-title-' + book.id">
+  <img
+    [src]="book.volumeInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/128x192'"
+    class="card-img-top rounded-top-4"
+    [alt]="book.volumeInfo.title || 'Book cover image'"
+    width="128"
+    height="192"
+  />
+  <div class="card-body">
+    <h2 class="card-title fw-semibold h5" id="book-title-{{book.id}}">
+      {{ book.volumeInfo.title }}
+    </h2>
+    <p class="text-muted small" *ngIf="book.volumeInfo.authors?.length; else unknownAuthor">
+      <span class="visually-hidden">Authors:</span>
+      {{ book.volumeInfo.authors?.join(', ') }}
+    </p>
+    <ng-template #unknownAuthor>
+      <p class="text-muted small">Unknown Author</p>
+    </ng-template>
+    <p class="card-text description">
+      {{ book.volumeInfo.description || 'No description available.' }}
+    </p>
+  </div>
+</article>

@@ -1,0 +1,23 @@
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  &.hover-scale:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+  }
+
+ .description {
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+  img {
+    object-fit: cover;
+    height: 200px;
+  }
+}

@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+
+body {
+  background-color: #f7f9fc;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+h2 {
+  font-weight: 600;
+}
+
+@media (max-width: 1280px) {
+  .card .description {
+    max-height: 80px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+}
